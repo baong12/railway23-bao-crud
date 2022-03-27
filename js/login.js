@@ -33,7 +33,7 @@ function login() {
 
             // redirect to home page
             // https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
-            window.location.replace("http://127.0.0.1:5500/");
+            window.location.replace("/");
         },
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 401) {

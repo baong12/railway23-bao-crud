@@ -7,7 +7,7 @@ $(function () {
 
 function redirect() {
   if (loginUser.username == undefined || loginUser.password == undefined) {
-    window.location.replace("http://127.0.0.1:5500/login.html");
+    window.location.replace("/login.html");
   }
 }
 

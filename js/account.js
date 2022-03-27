@@ -329,9 +329,9 @@ function openDeleteAccountModal(id) {
     $("#deleteAccountModal").modal("show");
     if (id != undefined && id != "") {
         $("#accountId").val(id);
-        $("#deleteAccountModal").find(".modal-body").html("Bạn có muốn xóa Phòng ban?")
+        $("#deleteAccountModal").find(".modal-body").html("Bạn có muốn xóa Nhân viên?")
     } else {
-        $("#deleteAccountModal").find(".modal-body").html("Bạn có muốn xóa tất cả Phòng ban đã chọn?")
+        $("#deleteAccountModal").find(".modal-body").html("Bạn có muốn xóa tất cả Nhân viên đã chọn?")
     }
 }
 

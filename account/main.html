@@ -1,0 +1,104 @@
+<div class="container-lg">
+    <div class="table-responsive">
+        <h2>Danh sách <b>Nhân viên</b></h2><br>
+        <div class="filter">
+            <label for="role"><b>Role</b></label>
+            <select name="role" class="role-list" id="filter-role-select"></select>
+            <label for="department"><b>Department</b></label>
+            <select name="department" class="department-list" id="filter-department-select"></select>
+            <button class="btn btn-info" id="filter-submit" title="Lọc"><i class="fa fa-filter"></i> Filter</button>
+            <button class="btn btn-outline-dark" id="filter-reset" title="Reset" onclick="resetAccountFilterInput()"><i
+                    class="fa fa-ban"></i></button>
+        </div>
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input id="searchBox" type="text" name="search" placeholder="Tìm theo tên">
+                    </div>
+                    <div class="table-button-row col-sm-6 flex-container-y-center">
+                        <div style="text-align: right;">
+                            <button type="button" title="Làm mới" class="btn btn-outline-dark table-btn"
+                                onclick="refreshAccountTable()"><i class="fa fa-arrows-rotate"></i> Refresh</button>
+                            <button type="button" title="Thêm" class="btn btn-success table-btn"
+                                onclick="openAddNewAccountModal()"><i class="fa fa-plus"></i> Add New</button>
+                            <button type="button" title="Xóa đã chọn" class="btn btn-danger table-btn"
+                                onclick="openDeleteAccountModal()"><i class="fa fa-trash"></i> Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Username</th>
+                        <th>Họ và tên</th>
+                        <th>Quyền</th>
+                        <th>Phòng ban</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+            <div class="pagination" id="tablePager"></div>
+            <div style="height: 30px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal HTML -->
+<div id="addNewAccountModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addNewAccountModalTitle"></h5>
+                <button type="button" class="close" aria-label="Close" onclick="hideAddNewAccountModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="accountId" name="accountId">
+
+                <label for="usernameInput"><b>Username</b></label>
+                <input type="text" placeholder="Nhập Username" name="usernameInput" id="usernameInput" required>
+
+                <label for="firstNameInput"><b>Tên</b></label>
+                <input type="text" placeholder="Nhập Tên" name="firstNameInput" id="firstNameInput" required>
+
+                <label for="lastNameInput"><b>Họ</b></label>
+                <input type="text" placeholder="Nhập Họ" name="lastNameInput" id="lastNameInput" required>
+
+                <label for="roleInput"><b>Role</b></label>
+                <select name="roleInput" class="role-list" id="modal-role-select" required></select>
+
+                <label for="departmentInput"><b>Phòng ban</b></label>
+                <select name="departmentInput" class="department-list" id="modal-department-select" required></select>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" onclick="saveAccount()">Save</button>
+                <button type="button" class="btn btn-secondary" onclick="hideAddNewAccountModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="deleteAccountModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modal-title" class="modal-title">Xóa Nhân viên</h5>
+                <button type="button" class="close" aria-label="Close" onclick="hideDeleteAccountModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="confirmDeleteAccount()">Delete</button>
+                <button type="button" class="btn btn-secondary" onclick="hideDeleteAccountModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

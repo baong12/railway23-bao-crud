@@ -1,0 +1,244 @@
+/* style for nav */
+
+#navbar {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+    z-index: 1;
+}
+
+#navbar a,
+#navbar span {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#navbar a:last-of-type,
+#navbar span {
+    float: right;
+}
+
+#navbar a:hover:not(.active) {
+    background-color: #ddd;
+    color: black;
+}
+
+/* my style  css */
+.main {
+    padding-top: 50px;
+}
+.footer {
+    height: 50px;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.main {
+    font-size: 20px;
+    padding-top: 100px;
+}
+
+.filter {
+    padding: 0 20px;
+}
+
+.filter a:hover {
+    cursor: pointer;
+}
+
+/* style for table ctrl + / */
+
+.table-wrapper {
+    min-width: 1000px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.table-title {
+    padding-bottom: 10px;
+    margin: 0 0 10px;
+}
+.table-title h2 {
+    margin: 6px 0 0;
+    font-size: 22px;
+}
+.flex-container-y-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.flex-container-x-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+/* .table-title .table-btn {
+    margin-left: 10px;
+    float: right;
+    height: 30px;
+    font-weight: bold;
+    font-size: 12px;
+    text-shadow: none;
+    min-width: 100px;
+    border-radius: 50px;
+    line-height: 13px;
+} */
+/* .table-title .table-btn i {
+    margin-right: 4px;
+} */
+
+table.table {
+    table-layout: auto;
+}
+table.table tr th,
+table.table tr td {
+    border-color: #e9e9e9;
+}
+table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+table.table th:last-child {
+    width: 140px;
+}
+table.table td a {
+    cursor: pointer;
+    /* display: inline-block; */
+    margin: 0 5px;
+    min-width: 24px;
+}
+table.table td a.add-member {
+    color: #27c46b;
+}
+table.table td a.edit {
+    color: #ffc107;
+}
+table.table td a.delete {
+    color: #e34724;
+}
+table.table td i {
+    font-size: 19px;
+}
+/* table.table td a.add i {
+    font-size: 24px;
+    margin-right: -1px;
+    position: relative;
+    top: 3px;
+} */
+table.table .form-control {
+    height: 32px;
+    line-height: 32px;
+    box-shadow: none;
+    border-radius: 2px;
+}
+table.table .form-control.error {
+    border-color: #f50000;
+}
+table.table td .add {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    /* color: black; */
+    float: left;
+    padding: 5px 15px;
+    margin-right: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    border: 1px solid #e9e9e9;
+    border-radius: 5px;
+}
+
+.pagination a.active {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+/* style create employee */
+
+/* style css for create employee  */
+select,
+input[type="date"],
+input[type="text"],
+input[type="password"] {
+    font-size: medium;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+select:focus,
+input[type="date"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+#searchBox {
+    margin: 0;
+}
+
+/* ẩn thông báo thành công */
+.alert {
+    display: none;
+    /* margin-top: 80px;
+    margin-left: 20px; */
+}
+
+.alert-queue {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    /* width: 100%;
+    height: 100%; */
+    z-index: 99;
+}
+
+.modal {
+    overflow: auto;
+}
+
+#addDepartmentModal .modal-footer {
+    justify-content: space-between;
+}
+
+#addAccountModal .modal-dialog {
+    max-width: 70%;
+}
+
+#addAccountModal .modal-body {
+    max-height: 500px;
+    overflow-y: auto;
+}
